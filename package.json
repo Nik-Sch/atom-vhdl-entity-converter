@@ -10,6 +10,7 @@
     "atom-workspace": [
       "vhdl-entity-converter:copy-as-component",
       "vhdl-entity-converter:copy-as-instance",
+      "vhdl-entity-converter:copy-as-sysverilog",
       "vhdl-entity-converter:copy-as-signals"
     ]
   },

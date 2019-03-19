@@ -2,6 +2,7 @@
   "atom-workspace": {
     "ctrl-shift-c ctrl-shift-c": "vhdl-entity-converter:copy-as-component",
     "ctrl-shift-c ctrl-shift-i": "vhdl-entity-converter:copy-as-instance",
+    "ctrl-alt-s": "vhdl-entity-converter:copy-as-sysverilog",
     "ctrl-shift-c ctrl-shift-s": "vhdl-entity-converter:copy-as-signals"
   }
 }

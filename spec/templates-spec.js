@@ -1,5 +1,5 @@
 "use babel"
-import { componentTemplate, instanceTemplate, signalsTemplate, DEFAULT_OPTIONS } from "../lib/templates"
+import { componentTemplate, instanceTemplate, signalsTemplate, sysVerilogTemplate, DEFAULT_OPTIONS } from "../lib/templates"
 import { loadFixture } from "./helpers"
 import entities from "./entities"
 
@@ -64,6 +64,36 @@ describe("templates.instanceTemplate", function () {
   it("can create a instance with indent of three spaces", function () {
     const param = Object.assign({}, DEFAULT_OPTIONS, {indentType: "Spaces", indentSpaceCount: 3});
     const text = instanceTemplate(entities.adder, param)
+    expect(text).toEqual(loadFixture("instance/adder_indent_3spaces.vhd"))
+  })
+})
+
+describe("templates.sysVerilogTemplate", function () {
+  it("can create an instance", function () {
+    const text = sysVerilogTemplate(entities.adder)
+    expect(text).toEqual(loadFixture("instance/adder.vhd"))
+  })
+
+  it("can create an instance without generics", function () {
+    const text = sysVerilogTemplate(entities.adderNoGenerics)
+    expect(text).toEqual(loadFixture("instance/adder_no_generics.vhd"))
+  })
+
+  it("can create an instance with a signal prefix", function () {
+    const param = Object.assign({}, DEFAULT_OPTIONS, {signalPrefix: "s_"});
+    const text = sysVerilogTemplate(entities.adder, param)
+    expect(text).toEqual(loadFixture("instance/adder_signal_prefix.vhd"))
+  })
+
+  it("can create an instance with tabbed indent", function () {
+    const param = Object.assign({}, DEFAULT_OPTIONS, {indentType: "Tabs"});
+    const text = sysVerilogTemplate(entities.adder, param)
+    expect(text).toEqual(loadFixture("instance/adder_indent_tab.vhd"))
+  })
+
+  it("can create a instance with indent of three spaces", function () {
+    const param = Object.assign({}, DEFAULT_OPTIONS, {indentType: "Spaces", indentSpaceCount: 3});
+    const text = sysVerilogTemplate(entities.adder, param)
     expect(text).toEqual(loadFixture("instance/adder_indent_3spaces.vhd"))
   })
 })

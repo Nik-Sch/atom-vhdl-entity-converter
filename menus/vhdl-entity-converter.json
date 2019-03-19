@@ -13,6 +13,10 @@
             "command": "vhdl-entity-converter:copy-as-instance"
           },
           {
+            "label": "Copy as SystemVerilog",
+            "command": "vhdl-entity-converter:copy-as-sysverilog"
+          },
+          {
             "label": "Copy as Signals",
             "command": "vhdl-entity-converter:copy-as-signals"
           }
@@ -34,6 +38,10 @@
             {
               "label": "Copy as Instance",
               "command": "vhdl-entity-converter:copy-as-instance"
+            },
+            {
+              "label": "Copy as SystemVerilog",
+              "command": "vhdl-entity-converter:copy-as-sysverilog"
             },
             {
               "label": "Copy as Signals",
